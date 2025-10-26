@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="hires-void-ii">
+<head>
+    <meta charset="utf-8">
+    <title>VOID II</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Journey deeper into the VOID and explore a new dimension of sounds &amp; visuals.">
+    <meta name="keywords" content="VOID II">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hi-ReS!">
+    <meta property="og:url" content="http://void-ii.hi-res.net/">
+    <meta property="og:title" content="VOID II">
+    <meta property="og:description" content="Journey deeper into the VOID and explore a new dimension of sounds &amp; visuals.">
+    <meta property="og:image" content="social/facebook/void0.jpg">
+    <meta property="og:image" content="social/facebook/void1.jpg">
+    <meta property="og:image" content="social/facebook/void2.jpg">
+    <meta property="og:image" content="social/facebook/void3.jpg">
+    <meta property="og:image" content="social/facebook/void5.jpg">
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:site" content="@HiReSLondon">
+    <meta name="twitter:title" content="VOID II">
+    <meta name="twitter:description" content="Journey deeper into the VOID and explore a new dimension of sounds &amp; visuals.">
+    <meta name="twitter:image" content="social/twitter/void.png">
+    <meta name="twitter:player" content="http://void-ii.hi-res.net/social/twitter/container.html">
+    <meta name="twitter:player:width" content="480">
+    <meta name="twitter:player:height" content="480">
+    <meta name="twitter:player:stream" content="http://void-ii.hi-res.net/social/twitter/void.mp4">
+    <meta name="twitter:player:stream:content_type" content="video/mp4">
+    <link rel="canonical" href="">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="favicons/default/ico/black.ico">
+    <link rel="stylesheet" href="css/app.production.0.0.0.css">
+</head>
+<body ng-controller="bodyController" ng-class="{'computer-says-no': !browserTestValidated}" style="background-color: black;" favicon audio-volume konami>
+    <background id="background"></background>
+    <section id="loading" ng-if="browserTestValidated" ng-controller="loadingController" ng-show="show" ng-cloak class="{{positionClass}}">
+        <img ng-if="!konami" src="images/loader.gif" class="loader">
+        <img ng-if="konami" src="images/void2000.gif" class="loader">
+    </section>
+    <div id="start" ng-if="browserTestValidated" ng-controller="startController" ng-show="showStart" ng-cloak>
+        <section class="intro montserrat">
+            <div ng-cloak split-words ng-if="!konami" class="text">
+                <p>Journey deeper into the VOID and explore a new dimension of sounds & visuals. Not alone, but with all of humanity. Gathering within the portals and being united by ears, eyes and soul.<br/> Don’t ask why. Just be. And float away.</p>
+            </div>
+            <div ng-cloak split-words ng-if="konami" class="text">
+                <p>Jounrey deeper into the VOID 2000 and xplore a new dimmention of sounds & visuals. Not alone, butt with all of humanity. Gathering within the potrals and being united by ears, eyes and soull.<br/> Don’t ask why. Just bee. And float away.</p>
+            </div>
+            <div class="btn-loader">
+                <a ng-class="{'hide': hideStartButton}" href="#" user-color user-color-hover ng-click="startClick($event)" ng-cloak class="btn">I've plugged my headphones in</a>
+                <img ng-if="!konami" ng-show="showStartLoader" src="images/loader.gif" class="loader">
+                <img ng-if="konami" ng-show="showStartLoader" src="images/void2000.gif" class="loader">
+            </div>
+        </section>
+    </div>
+    <section id="menu-room-title" ng-controller="menuRoomTitleController" ng-click="joinRoom()" ng-class="{'credits-open': creditsOpen, 'lock-menu': lockMenu, 'transition-down': showRoomTitle}" ng-cloak>
+        <div class="mask">
+            <p class="title monserat">{{currentRoom.title}}</p>
+            <h3 data-text="{{currentRoom.description}}" ng-bind-html="currentRoom.description" class="monserat glitch-text"></h3>
+        </div>
+    </section>
+    <section id="room-title" ng-controller="roomTitleController" ng-class="{'transition-down': showTitle}" ng-cloak>
+        <div class="mask">
+            <h3 class="monserat glitch-text">{{currentRoom.description}}</h3>
+        </div>
+    </section>
+    <div id="menu" ng-if="browserTestValidated" ng-controller="menuController">
+        <menu-visual></menu-visual>
+        <menu-visual-lamentations index="0" class="menu-visual-room"></menu-visual-lamentations>
+        <menu-visual-urban-jungle index="1" class="menu-visual-room"></menu-visual-urban-jungle>
+        <menu-visual-digital-skin index="2" class="menu-visual-room"></menu-visual-digital-skin>
+        <menu-visual-cicada index="3" class="menu-visual-room"></menu-visual-cicada>
+        <arrow ng-click="rotateMenu(-1)" ng-show="showMenuUI" class="arrow arrow-left">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+                <style type="text/css">.st0{fill:#FFFFFF;}</style>
+                <polygon id="XMLID_1_" points="5.9,7 11.2,1.7 9.5,0.1 2.5,7 9.5,14 11.2,12.3 " class="st0"></polygon>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="-17 19 14 14" style="enable-background:new -17 19 14 14;" xml:space="preserve" class="konami">
+                <style type="text/css">.st0{fill:#FFFFFF;}
+    .st1{font-family:'ComicSansMS';}
+    .st2{font-size:31.6699px;}</style>
+                <text transform="matrix(1 0 0 1 -16.0633 35.6115)" class="st0 st1 st2">&lt;</text>
+            </svg>
+        </arrow>
+        <arrow ng-click="rotateMenu(1)" ng-show="showMenuUI" class="arrow arrow-right">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+                <style type="text/css">.st0{fill:#FFFFFF;}</style>
+                <polygon id="XMLID_1_" points="5.9,7 11.2,1.7 9.5,0.1 2.5,7 9.5,14 11.2,12.3 " class="st0"></polygon>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="-17 19 14 14" style="enable-background:new -17 19 14 14;" xml:space="preserve" class="konami">
+                <style type="text/css">.st0{fill:#FFFFFF;}
+    .st1{font-family:'ComicSansMS';}
+    .st2{font-size:31.6699px;}</style>
+                <text transform="matrix(1 0 0 1 -16.0633 35.6115)" class="st0 st1 st2">&lt;</text>
+            </svg>
+        </arrow>
+    </div>
+    <header id="header" ng-show="showHeader" ng-controller="headerController" ng-class="{'credits-open': creditsOpen}" ng-cloak>
+        <h1 class="monserat"><a href="#" ng-click="onLogoClick($event)" ng-style="{'color': userColor}">VOID</a></h1>
+    </header>
+    <section id="rooms" ng-if="browserTestValidated" ng-controller="roomsController" ng-cloak></section>
+    <div id="introduction" ng-controller="introductionController" ng-cloak>
+        <div class="background-tint"></div>
+        <introduction-visual></introduction-visual>
+        <h2 ng-class="{'show': showIntroductionText, 'hide': hideIntroductionText}" class="monserat">CHAPTER 2 : PANDORA</h2>
+        <p ng-show="konami" ng-class="{'show': showIntroductionText, 'hide': hideIntroductionText}" class="konami-message">“Our apologies. Due to budget cuts, we’re only able to present a basic version of this website.”<br/><span>The producers.</span></p>
+    </div>
+    <script type="text/ng-template" id="home.html">
+        <div id="home"></div>
+    </script>
+    <script type="text/ng-template" id="room.html">
+        <div id="room">
+            <canvas room-visual-digital-skin ng-if="id == 'digital-skin' &amp;&amp; userHasClickedStart"></canvas>
+            <div room-audio-urban-jungle ng-if="id == 'urban-jungle' &amp;&amp; userHasClickedStart"></div>
+            <div room-visual-urban-jungle ng-if="id == 'urban-jungle' &amp;&amp; userHasClickedStart" fullscreen-resize>
+                <ul ng-show="showInstruments" class="instruments">
+                    <li ng-repeat="instrument in instruments"> <a href="#" ng-click="chooseInstrument(instrument.id)" ng-class="{'active': instrument.user}" ng-style="{'border-color': instrument.borderColor}"><span ng-style="{'background-color': instrument.color}"></span></a></li>
+                </ul>
+            </div>
+            <canvas room-visual-lamentations ng-if="id == 'lamentations' &amp;&amp; userHasClickedStart"></canvas>
+            <canvas room-visual-cicada ng-if="id == 'cicada' &amp;&amp; userHasClickedStart"></canvas>
+        </div>
+    </script>
+    <script type="text/ng-template" id="computer-says-no.html">
+        <div id="computer-says-no" ng-hide="browserTestValidated">
+            <section class="monserat">
+                <h2>Sorry</h2>
+                <p>Ops, bit out of touch there? Upgrade your browser and everything will be alright.</p>
+            </section>
+        </div>
+    </script>
+    <main ng-view class="view"></main>
+    <h2 id="hires" ng-click="toggleFooter($event)" ng-class="{'credits-open': creditsOpen}" ng-show="showHiresLogo" ng-cloak class="icon hires"></h2>
+    <footer id="footer" ng-show="showFooter" ng-controller="footerController" ng-class="{'credits-open': creditsOpen}" ng-cloak>
+        <section id="credits">
+            <h3 class="monserat">Credits</h3>
+            <p ng-bind-html="dictionary.get('credits-text-0')" class="monserat"></p>
+            <p ng-bind-html="dictionary.get('credits-text-1')" class="monserat"></p>
+            <palette>
+                <ul>
+                    <li ng-repeat="color in colors" ng-style="{'background-color': color}" data-color-index="{{$index}}" ng-click="changeColor($event)"></li>
+                </ul>
+            </palette>
+            <ul class="social-icons">
+                <li><a href="#" social-share="facebook"><span class="icon facebook"></span></a></li>
+                <li><a href="#" social-share="twitter"><span class="icon twitter"></span></a></li>
+                <li><a href="#" social-share="google"><span class="icon google"></span></a></li>
+            </ul>
+        </section>
+    </footer>
+    <script>var env = {
+     SHARE_URL: ""
+    ,SOCKET_HOST: "void-ii.hi-res.net"
+    ,SOCKET_PORT: "3010"
+    ,VOID_CONFIG: {"rooms":["lamentations","urban-jungle","digital-skin","cicada"],"ROOM_LIMIT":5}
+    ,DEVELOPMENT: false
+    ,PRODUCTION: true
+};
+
+var VOID_DATA = {
+    dictionary: {"meta-title":["VOID II"],"meta-description":["Journey deeper into the VOID and explore a new dimension of sounds & visuals."],"meta-keywords":["VOID, VOID II, VOID CHAPTER 2 : PANDORA, Hi-ReS!, multi-user, experience, digital, art, visual, sonic, experimental, internet, technology, interface, concepts, soulbath"],"meta-author":["Hi-ReS!"],"meta-twitter-site":["@HiReSLondon"],"title":["VOID"],"share-text":["Take part in a worldwide multi-user experience VOID CHAPTER 2 : PANDORA, exploring a new dimension of sounds & visuals."],"start-text":["<p>Journey deeper into the VOID and explore a new dimension of sounds & visuals. Not alone, but with all of humanity. Gathering within the portals and being united by ears, eyes and soul.<br/> Don’t ask why. Just be. And float away.</p>"],"start-text-konami":["<p>Jounrey deeper into the VOID 2000 and xplore a new dimmention of sounds & visuals. Not alone, butt with all of humanity. Gathering within the potrals and being united by ears, eyes and soull.<br/> Don’t ask why. Just bee. And float away.</p>"],"start-button":["I've plugged my headphones in"],"credits-title":["Credits"],"credits-text-0":["V O ID is a collaberative project made with love by a bunch of geeks."],"credits-text-1":["A <a href=\"http://hi-res.net/\" target=\"_blank\" class=\"user-color underline\">Hi-ReS!</a> Website<br/><br/>\n\tVisuals and sounds : <a href=\"http://leshka.fr/\" target=\"_blank\" class=\"user-color underline\">SHK - le Shka</a> <br/>\n\tDevelopement : <a href=\"https://www.ixviii.io/\" target=\"_blank\" class=\"user-color underline\">ixviii</a><br/>\n\t"],"introduction-text":["CHAPTER 2 : PANDORA"],"room-0-title":["Room 1"],"room-0-description":["Lamentations"],"room-1-title":["Room 2"],"room-1-description":["Urban jungle"],"room-2-title":["Room 3"],"room-2-description":["Digital skin"],"room-3-title":["Room 4"],"room-3-description":["Cicada"],"fallback-title":["Sorry"],"fallback-message":["Ops, bit out of touch there? Upgrade your browser and everything will be alright."],"konami-message":["“Our apologies. Due to budget cuts, we’re only able to present a basic version of this website.”<br/><span>The producers.</span>"]}
+};
+</script>
+    <script src="js/socket.io.min.js"></script>
+    <script src="js/vendor.production.0.0.0.js"></script>
+    <script src="js/app.production.0.0.0.js"></script>
+</body>
+</html>
